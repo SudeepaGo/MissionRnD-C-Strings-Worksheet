@@ -10,7 +10,25 @@ ERROR CASES: Return '\0' for invalid inputs.
 
 NOTES:
 */
-
+int findLengthOfString(char *);
 char KthIndexFromEnd(char *str, int K) {
-	return '\0';
+	int len;
+	char ch;
+	if (str == '\0') return '\0';
+	len = findLengthOfString(str);
+	if (K < 0 || K >= len) return '\0';
+	else
+	{
+		ch = str[len - K - 1];
+		return ch;
+	}
+}
+int findLengthOfString(char *str)
+{
+	int i, count = 0;
+	for (i = 0; str[i]; i++)
+	{
+		count++;
+	}
+	return count;
 }
